@@ -1,0 +1,199 @@
+<?xml version="1.0"?>
+<Envelope ovf:version="1.0" xml:lang="en-US" xmlns="http://schemas.dmtf.org/ovf/envelope/1" xmlns:ovf="http://schemas.dmtf.org/ovf/envelope/1" xmlns:rasd="http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_ResourceAllocationSettingData" xmlns:vssd="http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_VirtualSystemSettingData" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:vbox="http://www.virtualbox.org/ovf/machine">
+  <References>
+    <File ovf:id="file1" ovf:href="packer-virtualbox-ovf-1520878605-disk001.vmdk"/>
+  </References>
+  <DiskSection>
+    <Info>List of the virtual disks used in the package</Info>
+    <Disk ovf:capacity="6442450944" ovf:diskId="vmdisk1" ovf:fileRef="file1" ovf:format="http://www.vmware.com/interfaces/specifications/vmdk.html#streamOptimized" vbox:uuid="93c26225-b971-4d04-b887-8848e0aa814f"/>
+  </DiskSection>
+  <NetworkSection>
+    <Info>Logical networks used in the package</Info>
+    <Network ovf:name="Internal">
+      <Description>Logical network used by this appliance.</Description>
+    </Network>
+    <Network ovf:name="NAT">
+      <Description>Logical network used by this appliance.</Description>
+    </Network>
+  </NetworkSection>
+  <VirtualSystem ovf:id="packer-virtualbox-ovf-1520878605">
+    <Info>A virtual machine</Info>
+    <OperatingSystemSection ovf:id="94">
+      <Info>The kind of installed guest operating system</Info>
+      <Description>Ubuntu_64</Description>
+      <vbox:OSType ovf:required="false">Ubuntu_64</vbox:OSType>
+    </OperatingSystemSection>
+    <VirtualHardwareSection>
+      <Info>Virtual hardware requirements for a virtual machine</Info>
+      <System>
+        <vssd:ElementName>Virtual Hardware Family</vssd:ElementName>
+        <vssd:InstanceID>0</vssd:InstanceID>
+        <vssd:VirtualSystemIdentifier>packer-virtualbox-ovf-1520878605</vssd:VirtualSystemIdentifier>
+        <vssd:VirtualSystemType>virtualbox-2.2</vssd:VirtualSystemType>
+      </System>
+      <Item>
+        <rasd:Caption>1 virtual CPU</rasd:Caption>
+        <rasd:Description>Number of virtual CPUs</rasd:Description>
+        <rasd:ElementName>1 virtual CPU</rasd:ElementName>
+        <rasd:InstanceID>1</rasd:InstanceID>
+        <rasd:ResourceType>3</rasd:ResourceType>
+        <rasd:VirtualQuantity>1</rasd:VirtualQuantity>
+      </Item>
+      <Item>
+        <rasd:AllocationUnits>MegaBytes</rasd:AllocationUnits>
+        <rasd:Caption>2048 MB of memory</rasd:Caption>
+        <rasd:Description>Memory Size</rasd:Description>
+        <rasd:ElementName>2048 MB of memory</rasd:ElementName>
+        <rasd:InstanceID>2</rasd:InstanceID>
+        <rasd:ResourceType>4</rasd:ResourceType>
+        <rasd:VirtualQuantity>2048</rasd:VirtualQuantity>
+      </Item>
+      <Item>
+        <rasd:Address>0</rasd:Address>
+        <rasd:Caption>ideController0</rasd:Caption>
+        <rasd:Description>IDE Controller</rasd:Description>
+        <rasd:ElementName>ideController0</rasd:ElementName>
+        <rasd:InstanceID>3</rasd:InstanceID>
+        <rasd:ResourceSubType>PIIX4</rasd:ResourceSubType>
+        <rasd:ResourceType>5</rasd:ResourceType>
+      </Item>
+      <Item>
+        <rasd:Address>1</rasd:Address>
+        <rasd:Caption>ideController1</rasd:Caption>
+        <rasd:Description>IDE Controller</rasd:Description>
+        <rasd:ElementName>ideController1</rasd:ElementName>
+        <rasd:InstanceID>4</rasd:InstanceID>
+        <rasd:ResourceSubType>PIIX4</rasd:ResourceSubType>
+        <rasd:ResourceType>5</rasd:ResourceType>
+      </Item>
+      <Item>
+        <rasd:Address>0</rasd:Address>
+        <rasd:Caption>sataController0</rasd:Caption>
+        <rasd:Description>SATA Controller</rasd:Description>
+        <rasd:ElementName>sataController0</rasd:ElementName>
+        <rasd:InstanceID>5</rasd:InstanceID>
+        <rasd:ResourceSubType>AHCI</rasd:ResourceSubType>
+        <rasd:ResourceType>20</rasd:ResourceType>
+      </Item>
+      <Item>
+        <rasd:AddressOnParent>0</rasd:AddressOnParent>
+        <rasd:Caption>disk1</rasd:Caption>
+        <rasd:Description>Disk Image</rasd:Description>
+        <rasd:ElementName>disk1</rasd:ElementName>
+        <rasd:HostResource>/disk/vmdisk1</rasd:HostResource>
+        <rasd:InstanceID>6</rasd:InstanceID>
+        <rasd:Parent>3</rasd:Parent>
+        <rasd:ResourceType>17</rasd:ResourceType>
+      </Item>
+      <Item>
+        <rasd:AutomaticAllocation>true</rasd:AutomaticAllocation>
+        <rasd:Caption>Ethernet adapter on 'NAT'</rasd:Caption>
+        <rasd:Connection>NAT</rasd:Connection>
+        <rasd:ElementName>Ethernet adapter on 'NAT'</rasd:ElementName>
+        <rasd:InstanceID>7</rasd:InstanceID>
+        <rasd:ResourceSubType>E1000</rasd:ResourceSubType>
+        <rasd:ResourceType>10</rasd:ResourceType>
+      </Item>
+      <Item>
+        <rasd:AutomaticAllocation>true</rasd:AutomaticAllocation>
+        <rasd:Caption>Ethernet adapter on 'Internal'</rasd:Caption>
+        <rasd:Connection>Internal</rasd:Connection>
+        <rasd:ElementName>Ethernet adapter on 'Internal'</rasd:ElementName>
+        <rasd:InstanceID>8</rasd:InstanceID>
+        <rasd:ResourceSubType>E1000</rasd:ResourceSubType>
+        <rasd:ResourceType>10</rasd:ResourceType>
+      </Item>
+    </VirtualHardwareSection>
+    <vbox:Machine ovf:required="false" version="1.16-macosx" uuid="{56cc6edd-6efe-4c8e-ad21-cd14fe5798be}" name="packer-virtualbox-ovf-1520878605" OSType="Ubuntu_64" snapshotFolder="Snapshots" lastStateChange="2018-03-12T18:17:47Z">
+      <ovf:Info>Complete VirtualBox machine configuration in VirtualBox format</ovf:Info>
+      <ExtraData>
+        <ExtraDataItem name="GUI/LastCloseAction" value="PowerOff"/>
+        <ExtraDataItem name="GUI/LastNormalWindowPosition" value="155,447,720,421"/>
+      </ExtraData>
+      <Hardware>
+        <CPU>
+          <HardwareVirtExNestedPaging enabled="false"/>
+          <PAE enabled="true"/>
+          <LongMode enabled="true"/>
+          <X2APIC enabled="true"/>
+          <HardwareVirtExLargePages enabled="true"/>
+        </CPU>
+        <Memory RAMSize="2048"/>
+        <Chipset type="ICH9"/>
+        <Paravirt provider="KVM"/>
+        <Boot>
+          <Order position="1" device="HardDisk"/>
+          <Order position="2" device="DVD"/>
+          <Order position="3" device="HardDisk"/>
+          <Order position="4" device="None"/>
+        </Boot>
+        <Display VRAMSize="16"/>
+        <VideoCapture fps="25" options="ac_enabled=false"/>
+        <RemoteDisplay enabled="true">
+          <VRDEProperties>
+            <Property name="TCP/Address" value="127.0.0.1"/>
+            <Property name="TCP/Ports" value="5935"/>
+          </VRDEProperties>
+        </RemoteDisplay>
+        <BIOS>
+          <IOAPIC enabled="true"/>
+        </BIOS>
+        <Network>
+          <Adapter slot="0" enabled="true" MACAddress="080027A9D0C4" promiscuousModePolicy="AllowAll" type="82540EM">
+            <NAT/>
+          </Adapter>
+          <Adapter slot="1" enabled="true" MACAddress="080027E5F0A2" promiscuousModePolicy="AllowAll" type="82540EM">
+            <DisabledModes>
+              <NATNetwork name="NatNetwork"/>
+            </DisabledModes>
+            <InternalNetwork name="intnet"/>
+          </Adapter>
+          <Adapter slot="8" cable="false"/>
+          <Adapter slot="9" cable="false"/>
+          <Adapter slot="10" cable="false"/>
+          <Adapter slot="11" cable="false"/>
+          <Adapter slot="12" cable="false"/>
+          <Adapter slot="13" cable="false"/>
+          <Adapter slot="14" cable="false"/>
+          <Adapter slot="15" cable="false"/>
+          <Adapter slot="16" cable="false"/>
+          <Adapter slot="17" cable="false"/>
+          <Adapter slot="18" cable="false"/>
+          <Adapter slot="19" cable="false"/>
+          <Adapter slot="20" cable="false"/>
+          <Adapter slot="21" cable="false"/>
+          <Adapter slot="22" cable="false"/>
+          <Adapter slot="23" cable="false"/>
+          <Adapter slot="24" cable="false"/>
+          <Adapter slot="25" cable="false"/>
+          <Adapter slot="26" cable="false"/>
+          <Adapter slot="27" cable="false"/>
+          <Adapter slot="28" cable="false"/>
+          <Adapter slot="29" cable="false"/>
+          <Adapter slot="30" cable="false"/>
+          <Adapter slot="31" cable="false"/>
+          <Adapter slot="32" cable="false"/>
+          <Adapter slot="33" cable="false"/>
+          <Adapter slot="34" cable="false"/>
+          <Adapter slot="35" cable="false"/>
+        </Network>
+        <UART>
+          <Port slot="0" enabled="true" IOBase="0x3f8" IRQ="4" hostMode="Disconnected"/>
+        </UART>
+        <AudioAdapter codec="AD1980" driver="CoreAudio" enabledIn="false"/>
+        <RTC localOrUTC="UTC"/>
+        <GuestProperties>
+          <GuestProperty name="/VirtualBox/HostInfo/GUI/LanguageID" value="en_US" timestamp="1520399982977937000" flags=""/>
+        </GuestProperties>
+      </Hardware>
+      <StorageControllers>
+        <StorageController name="SATA" type="AHCI" PortCount="1" useHostIOCache="false" Bootable="true" IDE0MasterEmulationPort="0" IDE0SlaveEmulationPort="1" IDE1MasterEmulationPort="2" IDE1SlaveEmulationPort="3"/>
+        <StorageController name="ide0-0-0" type="PIIX4" PortCount="2" useHostIOCache="false" Bootable="true">
+          <AttachedDevice type="HardDisk" hotpluggable="false" port="0" device="0">
+            <Image uuid="{93c26225-b971-4d04-b887-8848e0aa814f}"/>
+          </AttachedDevice>
+        </StorageController>
+      </StorageControllers>
+    </vbox:Machine>
+  </VirtualSystem>
+</Envelope>
